@@ -1,0 +1,228 @@
+/* Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 1. Header / Navbar */
+.navbar {
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    color: #ccc;
+    font-size: 18px;
+    padding-right: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    height: 100%;
+}
+
+.nav-links li {
+    height: 100%;
+}
+
+.nav-links li a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+}
+
+/* Tab Home được active có màu đen đậm hơn */
+.nav-links li.active {
+    background-color: #000000;
+}
+
+.nav-links li.active a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+.login-btn {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-btn:hover {
+    color: #ffffff;
+}
+
+/* 2. Main Container Layout (3 Cột) */
+.main-container {
+    display: flex;
+    flex: 1;
+    background-color: #f1f1f1;
+}
+
+/* Sidebar Trái */
+.sidebar-left {
+    width: 15%;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.left-links {
+    list-style: none;
+}
+
+.left-links li {
+    margin-bottom: 12px;
+}
+
+.left-links li a {
+    color: #337ab7;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.left-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Content Chính */
+.content-main {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 25px 30px;
+}
+
+.content-main h1 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.content-main h2 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.content-main p {
+    color: #333;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 25px 0;
+}
+
+/* Sidebar Phải */
+.sidebar-right {
+    width: 20%;
+    padding: 20px 15px;
+    background-color: #f1f1f1;
+}
+
+.ads-box {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* 3. Footer */
+.footer {
+    background-color: #555555;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ==========================================
+   4. RESPONSIVE DESIGN (Media Queries)
+   ========================================== */
+
+/* Khi màn hình nhỏ hơn 768px (Mobile & Tablet dọc) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-left {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        padding: 8px 12px;
+    }
+
+    /* Chuyển 3 cột dọc thành 1 cột xếp chồng */
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar-left,
+    .content-main,
+    .sidebar-right {
+        width: 100%;
+    }
+
+    .sidebar-left {
+        order: 2; /* Đưa menu liên kết xuống dưới hoặc tùy chỉnh theo thứ tự */
+    }
+
+    .content-main {
+        order: 1;
+    }
+
+    .sidebar-right {
+        order: 3;
+    }
+}
